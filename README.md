@@ -52,5 +52,10 @@ Loans <- read.csv("peps300(1).csv", header = TRUE, stringsAsFactors = FALSE)
  > plot(Loans$DRate.1, Loans$Prog.Length)
  ```
  ![.](https://github.com/bill22290/Student-Loans/blob/master/images/ProgLength_DRate1_plot.PNG)
+ ```
+ > plot(Loans$DRate.1, Loans$School.Type)
+ ```
+ ![.](https://github.com/bill22290/Student-Loans/blob/master/images/SchoolType_DRate1_plot.PNG)
+ ```
  
  
