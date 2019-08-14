@@ -88,7 +88,34 @@ I want to engineer the dataset into a structure that will work for a decision tr
 > library(rpart)
 > library(rpart.plot)
 > tree15 <- rpart(train.15L$DRate.1~train.15L$Zip.Code + train.15L$Prog.Length + train.15L$Zip.Ext + train.15L$School.Type + train.15L$X.Num.1 + train.15L$X.Denom.1 + train.15L$PRate.1 + train.15L$Ethnic.Code + train.15L$Cong.Dis + train.15L$Region + train.15L$Average.or.Greater.than.30, data = train.15L, method = "anova", na.action = na.exclude)
+> printcp(tree15)
 
+Regression tree:
+rpart(formula = train.15L$DRate.1 ~ train.15L$Zip.Code + train.15L$Prog.Length + 
+    train.15L$Zip.Ext + train.15L$School.Type + train.15L$X.Num.1 + 
+    train.15L$X.Denom.1 + train.15L$PRate.1 + train.15L$Ethnic.Code + 
+    train.15L$Cong.Dis + train.15L$Region + train.15L$Average.or.Greater.than.30, 
+    data = train.15L, na.action = na.exclude, method = "anova")
 
+Variables actually used in tree construction:
+[1] train.15L$Ethnic.Code train.15L$Prog.Length train.15L$X.Denom.1   train.15L$X.Num.1    
+
+Root node error: 177835/3176 = 55.993
+
+n=3176 (235 observations deleted due to missingness)
+
+         CP nsplit rel error  xerror     xstd
+1  0.221924      0   1.00000 1.00092 0.032694
+2  0.190069      1   0.77808 0.77916 0.028997
+3  0.048757      2   0.58801 0.59443 0.025777
+4  0.032075      3   0.53925 0.54467 0.022205
+5  0.031726      5   0.47510 0.52182 0.021717
+6  0.019542      6   0.44338 0.46823 0.020487
+7  0.019123      8   0.40429 0.44254 0.019746
+8  0.015906      9   0.38517 0.42146 0.019120
+9  0.012558     10   0.36926 0.39168 0.018396
+10 0.010333     11   0.35671 0.37798 0.017714
+11 0.010000     12   0.34637 0.37160 0.017603
+```
 
 
