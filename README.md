@@ -133,4 +133,8 @@ No. of variables tried at each split: 3
 ```
 ![.](https://github.com/bill22290/Student-Loans/blob/master/images/Rfmodel15.png)
 
+It is surprising to me that the School type variable is not higher up on the charts considering the initial plots that I ran.  I now want to do some feature engineering on the School Type variable.
+
+ ### Feature Engineering
+I want to deconstruct the categorical variable school type.  I know based upon the exploratory data analysis that there is a significant relationship between school type and a cohert's default rate, specifically when it comes to proprietary institutions.  However, my models might not be capturing the importance of school's with a School Type entry of 3 (proprietary).
 
