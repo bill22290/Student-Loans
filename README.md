@@ -139,7 +139,12 @@ No. of variables tried at each split: 3
 It is surprising to me that the School type variable is not higher up on the charts considering the initial plots that I ran.  I now want to do some feature engineering on the School Type variable.
 
  ### Feature Engineering
-I want to deconstruct the categorical variable school type.  I know based upon the exploratory data analysis that there appears to be a significant relationship between school type and a cohert's default rate, specifically when it comes to proprietary institutions.  However, my models might not be capturing the importance of school's with a School Type entry of 3 (proprietary).
+I want to deconstruct the categorical variable school type.  I know based upon the exploratory data analysis that there appears to be a significant relationship between school type and a cohert's default rate, specifically when it comes to proprietary institutions.  However, my models might not be fully capturing the importance of school's with a School Type entry of 3 (proprietary).
+```
+> library(dplyr)
+> Loans15_Stype <- filter(Loans15, School.Type == "3")
+> str(Loans15_Stype)
+'data.frame':	1457 obs. of  13 variables:
 ```
 
 
