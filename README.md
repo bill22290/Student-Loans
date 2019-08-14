@@ -61,7 +61,7 @@ Loans <- read.csv("peps300(1).csv", header = TRUE, stringsAsFactors = FALSE)
  There appears to be a bit of a negative correlation between the program length (the length of the longest program offered by the institution) and the cohert's default rate. It is also interesting to note that proprietary (for profit) institutions appear to have relatively high rates of cohert defaults. 
  
 ### Data Engineering
-I want to engineer the dataset into a structure that will work for a decision tree model as that is one of the models that I intended to use. I am going to start by creating a dataframe only containing variables that I am interested in analyzing for 2015:
+I want to engineer the dataset into a structure that will work for a decision tree model and a Random Forest as those are the models that I intend to use. I am going to start by creating a dataframe only containing variables that I am interested in analyzing for 2015:
 ```
 > str(Loans15)
 'data.frame':	4874 obs. of  13 variables:
@@ -112,9 +112,25 @@ n=3176 (235 observations deleted due to missingness)
 6  0.019542      6   0.44338 0.46823 0.020487
 7  0.019123      8   0.40429 0.44254 0.019746
 8  0.015906      9   0.38517 0.42146 0.019120
-9  0.012558     10   0.36926 0.39168 0.018396
+9  0.012558     10   0.36926 0.39168 0.018396!
 10 0.010333     11   0.35671 0.37798 0.017714
 11 0.010000     12   0.34637 0.37160 0.017603
 ```
+ ### Random Forest
+```
+> rfmodel15 <- randomForest(rftrain.15L$DRate.1 ~., data = rftrain.15L, na.action = na.exclude, importance = TRUE)
+> rfmodel15
+
+Call:
+ randomForest(formula = rftrain.15L$DRate.1 ~ ., data = rftrain.15L,      importance = TRUE, na.action = na.exclude) 
+               Type of random forest: regression
+                     Number of trees: 500
+No. of variables tried at each split: 3
+
+          Mean of squared residuals: 9.507475
+                    % Var explained: 83.12
+> varImpPlot(rfmodel15)
+```
+![.](https://github.com/bill22290/Student-Loans/blob/master/images/Rfmodel15.png)
 
 
