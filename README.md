@@ -115,7 +115,10 @@ n=3176 (235 observations deleted due to missingness)
 9  0.012558     10   0.36926 0.39168 0.018396!
 10 0.010333     11   0.35671 0.37798 0.017714
 11 0.010000     12   0.34637 0.37160 0.017603
+> rpart.plot(tree15)
 ```
+![.](https://github.com/bill22290/Student-Loans/blob/master/images/rpartplot15.png)
+
  ### Random Forest
 ```
 > rfmodel15 <- randomForest(rftrain.15L$DRate.1 ~., data = rftrain.15L, na.action = na.exclude, importance = TRUE)
@@ -136,5 +139,7 @@ No. of variables tried at each split: 3
 It is surprising to me that the School type variable is not higher up on the charts considering the initial plots that I ran.  I now want to do some feature engineering on the School Type variable.
 
  ### Feature Engineering
-I want to deconstruct the categorical variable school type.  I know based upon the exploratory data analysis that there is a significant relationship between school type and a cohert's default rate, specifically when it comes to proprietary institutions.  However, my models might not be capturing the importance of school's with a School Type entry of 3 (proprietary).
+I want to deconstruct the categorical variable school type.  I know based upon the exploratory data analysis that there appears to be a significant relationship between school type and a cohert's default rate, specifically when it comes to proprietary institutions.  However, my models might not be capturing the importance of school's with a School Type entry of 3 (proprietary).
+```
+
 
