@@ -1,6 +1,6 @@
 # Student-Loans
 
-For this project I will be trying to predict a college cohert's overall default rate on student loans based upon feature variables in a dataset.   Data is already collected on the U.S. Department of Education Federal Student Aid website. 
+For this project I will be trying to predict a college cohert's overall default rate on student loans based upon feature variables in a dataset. Data is already collected on the U.S. Department of Education Federal Student Aid website. 
 
 The dataset to be used for this project can be found here:
 
@@ -80,4 +80,15 @@ I want to engineer the dataset into a structure that will work for a decision tr
  $ Region                    : int  4 4 4 4 4 4 4 4 4 4 ...
  $ Average.or.Greater.than.30: int  0 0 0 0 0 0 0 0 0 0 ...
  ```
+ ### Decision Tree(Rpart)
+ ```
+> train <- sample(nrow(Loans15), 0.7*nrow(Loans15), replace = FALSE)
+> train.15L <- Loans15[train,]
+> test.15L <- Loans15[-train,]
+> library(rpart)
+> library(rpart.plot)
+> tree15 <- rpart(train.15L$DRate.1~train.15L$Zip.Code + train.15L$Prog.Length + train.15L$Zip.Ext + train.15L$School.Type + train.15L$X.Num.1 + train.15L$X.Denom.1 + train.15L$PRate.1 + train.15L$Ethnic.Code + train.15L$Cong.Dis + train.15L$Region + train.15L$Average.or.Greater.than.30, data = train.15L, method = "anova", na.action = na.exclude)
+
+
+
 
