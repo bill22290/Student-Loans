@@ -186,3 +186,19 @@ n=4542 (332 observations deleted due to missingness)
 11 0.010000     12   0.35262 0.36534 0.015631
 ```
 Compared to the original decision tree15, The newly created decision tree treeST15 has a lower Root node error and lower xstd for each corresponding CP.
+
+Let's now take a look at a random forest model with this newly created binary school type variable:
+```
+> rfmodel15ST <- randomForest(rfL15ST$DRate.1~., data = rfL15ST, na.action = na.exclude, importance = TRUE)
+> rfmodel15ST
+
+Call:
+ randomForest(formula = rfL15ST$DRate.1 ~ ., data = rfL15ST, importance = TRUE,      na.action = na.exclude) 
+               Type of random forest: regression
+                     Number of trees: 500
+No. of variables tried at each split: 3
+
+          Mean of squared residuals: 7.759169
+                    % Var explained: 85.77
+```
+This model has a lower Mean of squared residuals value and a higher % of Var explained compared to the first Random Forest Model that I created. 
