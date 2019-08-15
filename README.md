@@ -142,7 +142,7 @@ No. of variables tried at each split: 3
 ```
 ![.](https://github.com/bill22290/Student-Loans/blob/master/images/Rfmodel15.png)
 
-It is surprising to me that the School type variable is not higher up on the charts considering the initial plots that I ran.  I now want to do some feature engineering on the School Type variable.
+It is surprising to me that the School type variable is not higher up on the charts considering the initial plots that I ran. I now want to do some feature engineering on the School Type variable.
 
  ### Feature Engineering
 I want to deconstruct the categorical variable school type.  I know based upon the exploratory data analysis that there appears to be a significant relationship between school type and a cohert's default rate, specifically when it comes to proprietary institutions.  However, my models might not be fully capturing the importance of school's with a School Type entry of 3 (proprietary).
@@ -154,6 +154,35 @@ To better exploit the differences in school types, I want to transform the Schoo
 > Loans15_Stype$School.Type[Loans15_Stype$School.Type == 5] <- 0
 > Loans15_Stype$School.Type[Loans15_Stype$School.Type == 7] <- 0
 > Loans15_Stype$School.Type[Loans15_Stype$School.Type == 3] <- 1
+> treeST15 <- rpart(Loans15_Stype$DRate.1~Loans15_Stype$Zip.Code + Loans15_Stype$Prog.Length + Loans15_Stype$Zip.Ext + Loans15_Stype$School.Type + Loans15_Stype$X.Num.1 + Loans15_Stype$X.Denom.1 + Loans15_Stype$PRate.1 + Loans15_Stype$Ethnic.Code + Loans15_Stype$Cong.Dis + Loans15_Stype$Region + Loans15_Stype$Average.or.Greater.than.30, data = Loans15_Stype, method = "anova", na.action = na.exclude)
+> printcp(treeST15)
+
+Regression tree:
+rpart(formula = Loans15_Stype$DRate.1 ~ Loans15_Stype$Zip.Code + 
+    Loans15_Stype$Prog.Length + Loans15_Stype$Zip.Ext + Loans15_Stype$School.Type + 
+    Loans15_Stype$X.Num.1 + Loans15_Stype$X.Denom.1 + Loans15_Stype$PRate.1 + 
+    Loans15_Stype$Ethnic.Code + Loans15_Stype$Cong.Dis + Loans15_Stype$Region + 
+    Loans15_Stype$Average.or.Greater.than.30, data = Loans15_Stype, 
+    na.action = na.exclude, method = "anova")
+
+Variables actually used in tree construction:
+[1] Loans15_Stype$Ethnic.Code Loans15_Stype$Prog.Length Loans15_Stype$X.Denom.1   Loans15_Stype$X.Num.1    
+
+Root node error: 248420/4542 = 54.694
+
+n=4542 (332 observations deleted due to missingness)
+
+         CP nsplit rel error  xerror     xstd
+1  0.222827      0   1.00000 1.00038 0.027131
+2  0.187999      1   0.77717 0.77749 0.024194
+3  0.045421      2   0.58917 0.58979 0.021621
+4  0.031030      3   0.54375 0.54966 0.019133
+5  0.029870      5   0.48169 0.49565 0.017853
+6  0.022477      6   0.45182 0.46621 0.017400
+7  0.019216      7   0.42934 0.44179 0.017555
+8  0.015664      9   0.39091 0.40464 0.016536
+9  0.012317     10   0.37525 0.38800 0.016343
+10 0.010316     11   0.36293 0.37732 0.016097
+11 0.010000     12   0.35262 0.36534 0.015631
 ```
-
-
+Compared to the original decision tree15, The newly created decision tree treeST15 has a lower Root node error and lower xstd for each corresponding CP.
