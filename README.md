@@ -117,6 +117,12 @@ n=3176 (235 observations deleted due to missingness)
 11 0.010000     12   0.34637 0.37160 0.017603
 > rpart.plot(tree15)
 ```
+The first split improves the model fit the most based upon how much relative error has decreased (0.221924) as nsplit goes from 0 to 1. The last split adds a little value in decreasing relative error.
+
+A tree with 11 splits minimizes the relative error for the tree15 model. I could look to apply the 1 standard error rule, however I do not think that is necessary since the dataset that I am working with isn't too large so computational constraints are not an issue for this exercise.
+```
+> rpart.plot(tree15)
+```
 ![.](https://github.com/bill22290/Student-Loans/blob/master/images/rpartplot15.png)
 
  ### Random Forest
