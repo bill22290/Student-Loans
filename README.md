@@ -146,11 +146,14 @@ It is surprising to me that the School type variable is not higher up on the cha
 
  ### Feature Engineering
 I want to deconstruct the categorical variable school type.  I know based upon the exploratory data analysis that there appears to be a significant relationship between school type and a cohert's default rate, specifically when it comes to proprietary institutions.  However, my models might not be fully capturing the importance of school's with a School Type entry of 3 (proprietary).
+
+To better exploit the differences in school types, I want to transform the School type variable into a binary feature where proprietary institutions have a school type value of 1 and all other institutions have a school type value of 0. I will create a duplicate copy of the dataframe used in my tree15 model to do so (Loans15_Stype):
 ```
-> library(dplyr)
-> Loans15_Stype <- filter(Loans15, School.Type == "3")
-> str(Loans15_Stype)
-'data.frame':	1457 obs. of  13 variables:
+> Loans15_Stype$School.Type[Loans15_Stype$School.Type == 1] <- 0
+> Loans15_Stype$School.Type[Loans15_Stype$School.Type == 2] <- 0
+> Loans15_Stype$School.Type[Loans15_Stype$School.Type == 5] <- 0
+> Loans15_Stype$School.Type[Loans15_Stype$School.Type == 7] <- 0
+> Loans15_Stype$School.Type[Loans15_Stype$School.Type == 3] <- 1
 ```
 
 
