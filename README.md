@@ -61,7 +61,7 @@ Loans <- read.csv("peps300(1).csv", header = TRUE, stringsAsFactors = FALSE)
  There appears to be a bit of a negative correlation between the program length (the length of the longest program offered by the institution) and the cohert's default rate. It is also interesting to note that proprietary (for profit) institutions appear to have relatively high rates of cohert defaults. 
  
 ### Data Engineering
-I want to engineer the dataset into a structure that will work for a decision tree model and a Random Forest as those are the models that I intend to use. I am going to start by creating a dataframe only containing variables that I am interested in analyzing for 2015:
+I want to engineer the dataset into a structure that will work for a decision tree model and a Random Forest model as those are the models that I intend to use. I am going to start by creating a dataframe only containing variables that I am interested in analyzing for 2015:
 ```
 > str(Loans15)
 'data.frame':	4874 obs. of  13 variables:
