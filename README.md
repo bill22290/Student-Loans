@@ -239,6 +239,8 @@ This model has a lower Mean of squared residuals value and a higher % of Var exp
 The Random Forest Model accuracy was significantly better than the rpart model accuracy, however still underwhelming.
 
 # Conclusion
+Even though the accuracy of the different machine learning models was less than ideal, this still was a worthwhile exercise for a couple of different reasons.  Based upon the models, we could see that program length (the length of the longest program offered by the institution) and school type, specifically if a school is proprietary or not, were important features in the data with respect to the default rate.
 
+This also was an important lesson in understanding that a machine learning model is only as good as the quality of the data.  Sometimes, there  isn't much of a recognizable pattern or predictive relationship between different variables within a dataset.  In situations like this, it is important for a data scientist not to attempt to overfit or extrapolate too much from a model that simply doesn't have much predictive value. 
 
 
