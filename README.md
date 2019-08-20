@@ -209,7 +209,7 @@ I can now determine the accuracy by dividing the sum of the diagonal of the conf
 ```
 As we can see above, unfortunately the model's predictions were not very accurate at all. 
 
-### Random Forest
+### Random Forest Model Accuracy
 
 Let's now take a look at a random forest model with this newly created binary school type variable:
 ```
@@ -227,9 +227,6 @@ No. of variables tried at each split: 3
 ```
 This model has a lower Mean of squared residuals value and a higher % of Var explained compared to the first Random Forest Model that I created. 
 
-### Cross-validation Results
-
-### Random Forest Model Accuracy
 ```
 > rfrounded_y <- round(rfmodel15ST$y)
 > rfrounded_predictions <- round(rfmodel15ST$predicted)
@@ -239,4 +236,8 @@ This model has a lower Mean of squared residuals value and a higher % of Var exp
 [1] 0.2297235
 ```
 The Random Forest Model accuracy was significantly better than the rpart model accuracy, however still underwhelming.
+
+# Conclusion
+
+
 
