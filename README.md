@@ -229,3 +229,14 @@ This model has a lower Mean of squared residuals value and a higher % of Var exp
 
 ### Cross-validation Results
 
+### Random Forest Model Accuracy
+```
+> rfrounded_y <- round(rfmodel15ST$y)
+> rfrounded_predictions <- round(rfmodel15ST$predicted)
+> RFCM <- table(rfrounded_y, rfrounded_predictions)
+> accuracyrf <- sum(diag(RFCM))/sum(RFCM)
+> accuracyrf
+[1] 0.2297235
+```
+The Random Forest Model accuracy was significantly better than the rpart model accuracy, however still underwhelming.
+
