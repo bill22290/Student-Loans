@@ -187,6 +187,13 @@ n=4542 (332 observations deleted due to missingness)
 ```
 Compared to the original decision tree15, The newly created decision tree treeST15 has a lower Root node error and lower xstd for each corresponding CP.
 
+ ### Cross-validation Results
+ ```
+ > plotcp(treeST15)
+ ```
+ ![.](https://github.com/bill22290/Student-Loans/blob/master/images/rpartcrossval.png)
+
+
 Let's now take a look at a random forest model with this newly created binary school type variable:
 ```
 > rfmodel15ST <- randomForest(rfL15ST$DRate.1~., data = rfL15ST, na.action = na.exclude, importance = TRUE)
