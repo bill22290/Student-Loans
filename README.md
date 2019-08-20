@@ -207,7 +207,7 @@ I can now determine the accuracy by dividing the sum of the diagonal of the conf
 > accuracyrpart
 [1] 0.04997798
 ```
-As we can see above, unfortunately the model's predictions were not very accurate at all.
+As we can see above, unfortunately the model's predictions were not very accurate at all. 
 
 ### Random Forest
 
@@ -226,3 +226,6 @@ No. of variables tried at each split: 3
                     % Var explained: 85.77
 ```
 This model has a lower Mean of squared residuals value and a higher % of Var explained compared to the first Random Forest Model that I created. 
+
+### Cross-validation Results
+
