@@ -1,6 +1,6 @@
 # Student-Loans
 
-For this project I will be trying to predict a college cohert's overall default rate on student loans based upon feature variables in a dataset. Data is already collected on the U.S. Department of Education Federal Student Aid website. 
+For this project I will be trying to predict a college cohert's overall default rate on student loans based upon feature variables in a dataset. The data that I will be using is already collected on the U.S. Department of Education Federal Student Aid website. 
 
 The dataset to be used for this project can be found here:
 
