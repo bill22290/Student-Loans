@@ -187,12 +187,29 @@ n=4542 (332 observations deleted due to missingness)
 ```
 Compared to the original decision tree15, The newly created decision tree treeST15 has a lower Root node error and lower xstd for each corresponding CP.
 
- ### Cross-validation Results
+### Cross-validation Results
  ```
  > plotcp(treeST15)
  ```
  ![.](https://github.com/bill22290/Student-Loans/blob/master/images/rpartcrossval.png)
 
+### Rpart Model Accuracy
+
+I now want to build a prediction table and a confusion matrix to assess how well the model performed predicting a school's overall default rate. The U.S. Department of Education makes decisions on allocating Pell Grant funds using whole numbers (30% default rate for Pell Grant eligibility) so I want to round to whole numbers before building:
+```
+> rounded_y <- round(Loans15_Stype$DRate.1)
+> rounded_predictions <- round(predictions)
+> CM <- table(rounded_y, rounded_predictions)
+```
+I can now determine the accuracy by dividing the sum of the diagonal of the confusion matrix just built (CM), which are the correct predictions, by the total sum of the confusion matrix:
+```
+> accuracyrpart <- sum(diag(CM))/sum(CM)
+> accuracyrpart
+[1] 0.04997798
+```
+As we can see above, unfortunately the model's predictions were not very accurate at all.
+
+### Random Forest
 
 Let's now take a look at a random forest model with this newly created binary school type variable:
 ```
