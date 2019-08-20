@@ -192,6 +192,7 @@ Compared to the original decision tree15, The newly created decision tree treeST
  > plotcp(treeST15)
  ```
  ![.](https://github.com/bill22290/Student-Loans/blob/master/images/rpartcrossval.png)
+The plotcp() function gives us the relative cross-validation error for different tree sizes, and it appears that n = 11 minimizes the relative error before crossing below the x-axis.  One could perhaps interpret this visual as n = 12 minimizing the relative error, but that would add additional computation in exchange for little marginal improvement in minimizing relative error.
 
 ### Rpart Model Accuracy
 
