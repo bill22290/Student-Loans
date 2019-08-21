@@ -185,7 +185,7 @@ n=4542 (332 observations deleted due to missingness)
 10 0.010316     11   0.36293 0.37732 0.016097
 11 0.010000     12   0.35262 0.36534 0.015631
 ```
-Compared to the original decision tree15, The newly created decision tree treeST15 has a lower Root node error and lower xstd for each corresponding CP.
+Compared to the original decision tree15, the newly created decision tree treeST15 has a lower Root node error and lower xstd for each corresponding CP.
 
 ### Cross-validation Results
  ```
