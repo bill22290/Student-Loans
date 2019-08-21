@@ -198,6 +198,7 @@ The plotcp() function gives us the relative cross-validation error for different
 
 I now want to build a prediction table and a confusion matrix to assess how well the model performed predicting a school's overall default rate. The U.S. Department of Education makes decisions on allocating Pell Grant funds using whole numbers (30% default rate for Pell Grant eligibility) so I want to round to whole numbers before building:
 ```
+> predictions <- predict(treeST15, type = "matrix")
 > rounded_y <- round(Loans15_Stype$DRate.1)
 > rounded_predictions <- round(predictions)
 > CM <- table(rounded_y, rounded_predictions)
