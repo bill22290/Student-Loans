@@ -243,4 +243,13 @@ Even though the accuracy of the different machine learning models was less than 
 
 This also was an important lesson in understanding that a machine learning model is only as good as the quality of the data.  Sometimes, there  isn't much of a recognizable pattern or predictive relationship between different variables within a dataset.  In situations like this, it is important for a data scientist not to attempt to overfit or extrapolate too much from a model that simply doesn't have much predictive value. 
 
+### Sources
+```
+> citation()
+To cite R in publications use:
+
+  R Core Team (2019). R: A language and environment for statistical computing. R Foundation
+  for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+```
+
 
