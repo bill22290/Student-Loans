@@ -1,6 +1,6 @@
 # Student-Loans
 
-For this project I will be trying to predict a college cohert's overall default rate on student loans based upon feature variables in a dataset. The data that I will be using is already collected on the U.S. Department of Education Federal Student Aid website. 
+For this project I will be trying to predict a college cohort's overall default rate on student loans based upon feature variables in a dataset. The data that I will be using is already collected on the U.S. Department of Education Federal Student Aid website. 
 
 The dataset to be used for this project can be found here:
 
@@ -144,7 +144,7 @@ No. of variables tried at each split: 3
 It is surprising to me that the School type variable is not higher up on the charts considering the initial plots that I ran. I now want to do some feature engineering on the School Type variable.
 
  ### Feature Engineering
-I want to deconstruct the categorical variable school type.  I know based upon the exploratory data analysis that there appears to be a significant relationship between school type and a cohert's default rate, specifically when it comes to proprietary institutions.  However, my models might not be fully capturing the importance of school's with a School Type entry of 3 (proprietary).
+I want to deconstruct the categorical variable school type.  I know based upon the exploratory data analysis that there appears to be a significant relationship between school type and a cohort's default rate, specifically when it comes to proprietary institutions.  However, my models might not be fully capturing the importance of school's with a School Type entry of 3 (proprietary).
 
 To better exploit the differences in school types, I want to transform the School type variable into a binary feature where proprietary institutions have a school type value of 1 and all other institutions have a school type value of 0. I will create a duplicate copy of the dataframe used in my tree15 model to do so (Loans15_Stype):
 ```
